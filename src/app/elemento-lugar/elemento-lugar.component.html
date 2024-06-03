@@ -1,0 +1,32 @@
+
+<div id="principal" class="card">  
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{item.imagen}}" 
+            class="img-fluid rounder-start"
+            alt="Playa">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nombre }}
+                    @if (item.visitado) {
+                        <span><i class="bi bi-star-fill"></i></span>
+                    }
+                </h5>
+                <p class="card-text">{{item.descripcion}}</p>
+                
+                
+                <div class="card-text">
+                    <span class="badge bg-danger">Cultura</span>
+                    <Span class="badge bg-danger">Ocio</Span>                    
+                </div>
+                <div class="opciones">
+                    @if (!item.visitado) {
+                        <Button class="btn btn-success" (click)="marcarVisitado()">Visitado</Button>    
+                    }
+                    
+                </div>                            
+            </div>          
+        </div>
+    </div>
+</div>
